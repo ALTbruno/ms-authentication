@@ -13,8 +13,9 @@ app.use(express.urlencoded({extended: true}));
 
 // Configurações de Rotas
 app.use(statusRoute);
-app.use(jwtAuthenticationMiddleware, usersRoute);
 app.use(authorizationRoute);
+app.use(jwtAuthenticationMiddleware);
+app.use(usersRoute);
 
 // Configurações dos Hanflers de Erro
 app.use(errorHandler);
